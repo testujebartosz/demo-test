@@ -13,7 +13,7 @@ public class BaseTest {
 
     @BeforeClass
     public void setupBrowser() {
-        driver = DriverFactory.getDriver("firefox");
+        driver = DriverFactory.getDriver("chrome");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.get("http://seleniumdemo.com/");
