@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
 
         WebElement dashboardLink = new HomePage(driver)
                 .openMyAccountPage()
-                .logInValidData("test5@raz12l.pl", "abc123abc@@@l1")
+                .logInValidData("testraz1", "abc123abc@@@l1")
                 .getDashboardLink();
 
         Assert.assertEquals(dashboardLink.getText(), "Dashboard");

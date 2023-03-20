@@ -3,6 +3,7 @@ package pl.bartosztestuje.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import pl.bartosztestuje.utils.SeleniumHelper;
 
 public class ProductListPage{
 
@@ -13,7 +14,9 @@ public class ProductListPage{
     }
 
     public ProductPage openProduct(String title) {
-        driver.findElement(By.xpath("//h2[text()='"+ title +"']")).click();
+        By xpathProduct = By.xpath("//h2[text()='"+ title +"']");
+        SeleniumHelper.waitForClickable(xpathProduct,driver);
+        driver.findElement(xpathProduct).click();
         return new ProductPage(driver);
     }
 }
